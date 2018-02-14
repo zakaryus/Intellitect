@@ -1,0 +1,73 @@
+<h2>Who am I?</h2>
+<div class="row">
+    <div class="col-xs-12" *ngIf="(coreState$ | async).displaySoftwareEngineer">
+        <app-card cardTitle="Software Engineer" 
+                  [cardBody]="(coreState$ | async).textSoftwareEngineer" 
+                  [loading]="(coreState$ | async).loadingSoftwareEngineer"
+                  useNext="true" 
+                  (onNext)="onSoftwareEngineerNext()"
+                  hasContent="true">
+            <ngx-charts-advanced-pie-chart [view]="view"
+                                           [scheme]="colorScheme"
+                                           [results]="experience"
+                                           label="Total Years Development Experience">
+            </ngx-charts-advanced-pie-chart>
+        </app-card>
+    </div>
+</div>
+
+<h2 *ngIf="techUsedState$ | async">Technologies Used</h2>
+<div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayDotnetCore">
+        <app-card cardTitle=".Net Core"
+                  [cardBody]="(coreState$ | async).textDotnetCore" 
+                  [loading]="(coreState$ | async).loadingDotnetCore"
+                  useBack="true"
+                  (onBack)="onDotnetCoreBack()"
+                  useNext="true"
+                  (onNext)="onDotnetCoreNext()"></app-card>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayWebApi2">
+        <app-card cardTitle="Web Api 2"
+                  [cardBody]="(coreState$ | async).textWebApi2" 
+                  [loading]="(coreState$ | async).loadingWebApi2"
+                  useBack="true"
+                  (onBack)="onWebApi2Back()"
+                  useNext="true"
+                  (onNext)="onWebApi2Next()"></app-card>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayAngular5">
+        <app-card cardTitle="Angular 5"
+                  [cardBody]="(coreState$ | async).textAngular5" 
+                  [loading]="(coreState$ | async).loadingAngular5"
+                  useBack="true"
+                  (onBack)="onAngular5Back()"
+                  useNext="true"
+                  (onNext)="onAngular5Next()"></app-card>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayAngularMaterial">
+        <app-card cardTitle="Angular Material"
+                  [cardBody]="(coreState$ | async).textAngularMaterial" 
+                  [loading]="(coreState$ | async).loadingAngularMaterial"
+                  useBack="true"
+                  (onBack)="onAngularMaterialBack()"
+                  useNext="true"
+                  (onNext)="onAngularMaterialNext()"></app-card>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayNgxCharts">
+        <app-card cardTitle="Ngx Charts"
+                  [cardBody]="(coreState$ | async).textNgxCharts" 
+                  [loading]="(coreState$ | async).loadingNgxCharts"
+                  useBack="true"
+                  (onBack)="onNgxChartsBack()"
+                  useNext="true"
+                  (onNext)="onNgxChartsNext()"></app-card>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12" *ngIf="(coreState$ | async).displayNgrx">
+        <app-card cardTitle="Ngrx"
+                  [cardBody]="(coreState$ | async).textNgrx" 
+                  [loading]="(coreState$ | async).loadingNgrx"
+                  useBack="true"
+                  (onBack)="onNgrxBack()"></app-card>
+    </div>
+</div>

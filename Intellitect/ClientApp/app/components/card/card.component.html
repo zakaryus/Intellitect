@@ -1,0 +1,23 @@
+﻿<mat-card [@cardState]>
+    <mat-card-header color="primary">
+        <mat-card-title class="title">{{cardTitle}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngIf="loading; else loaded" class="row">
+            <div class="col-xs-12">
+                <mat-progress-spinner color="primary"
+                                      diameter="24"
+                                      mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
+        </div>
+        <ng-template #loaded>
+            <ng-content *ngIf="hasContent"></ng-content>
+            <div [innerHtml]="cardBody"></div>
+        </ng-template>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button *ngIf="useBack" mat-button color="accent" (click)="onClickBack()">CLOSE</button>
+        <button *ngIf="useNext" mat-button color="primary" (click)="onClickNext()">NEXT</button>
+    </mat-card-actions>
+</mat-card>

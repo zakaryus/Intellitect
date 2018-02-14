@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <span style="vertical-align:sub;">Zak Steele</span>
+                <button style="margin-right: -18px;" class="pull-right" mat-icon-button [matMenuTriggerFor]="appMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #appMenu="matMenu">
+                    <button mat-menu-item (click)="onClickEmail()"><mat-icon color="accent">email</mat-icon> zakaryus.steele@gmail.com</button>
+                    <button mat-menu-item (click)="onClickPhone()"><mat-icon color="accent">phone</mat-icon> 1 (208) 755-0771</button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>
+<div id="core" class='container'>
+    <div class='row'>
+        <div class='col-xs-12'>
+            <home></home>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Intellitect/bin
+/Intellitect/node_modules
+/Intellitect/obj
+/Intellitect/Properties/PublishProfiles
+/Intellitect/Intellitect.csproj.user
+/Intellitect/package-lock.json
